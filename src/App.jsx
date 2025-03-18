@@ -1,5 +1,6 @@
 import "./App.css"
 import { useState } from "react"
+import Navbar from "./Navbar"
 
 function App() {
   const [username, setusername] = useState("tola")
@@ -32,6 +33,7 @@ function App() {
   }
   return (
     <>
+    <Navbar/>
       <div>
       <h1>My App</h1>
       <p>{detail.user}</p>
