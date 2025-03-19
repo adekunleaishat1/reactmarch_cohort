@@ -1,6 +1,12 @@
 import "./App.css"
 import { useState } from "react"
 import Navbar from "./Navbar"
+import { Route, Routes } from "react-router-dom"
+import Notfound from "./Notfound"
+import Todo from "./Todo"
+import Home from "./Home"
+import Landing from "./Landing"
+import Profile from "./Profile"
 
 function App() {
   const [username, setusername] = useState("tola")
@@ -33,8 +39,17 @@ function App() {
   }
   return (
     <>
-    <Navbar/>
-      <div>
+      {/* <Navbar/> */}
+      <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path='*' element={<Notfound/>} />
+      <Route path="/home" element={<Landing/>}>
+        <Route index element={<Todo/>} />
+        <Route  path='/home/todo' element={<Todo/>}/>
+        <Route path="/home/profile" element={<Profile/>}/>
+      </Route>
+     </Routes>
+      {/* <div>
       <h1>My App</h1>
       <p>{detail.user}</p>
       <p>{detail.pass}</p>
@@ -56,7 +71,7 @@ function App() {
       ))
 
       }
-      </div>
+      </div> */}
       
     </>
     
