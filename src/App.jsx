@@ -7,6 +7,9 @@ import Todo from "./Todo"
 import Home from "./Home"
 import Landing from "./Landing"
 import Profile from "./Profile"
+import Http from "./Http"
+import Onetodo from "./Onetodo"
+import Spotify from "./Spotify"
 
 function App() {
   const [username, setusername] = useState("tola")
@@ -43,6 +46,9 @@ function App() {
       <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path='*' element={<Notfound/>} />
+      <Route path="/http" element={<Http/>}/>
+      <Route path="/spot" element={<Spotify/>}/>
+      <Route path="/one/:id" element={<Onetodo/>}/>
       <Route path="/home" element={<Landing/>}>
         <Route index element={<Todo/>} />
         <Route  path='/home/todo' element={<Todo/>}/>
