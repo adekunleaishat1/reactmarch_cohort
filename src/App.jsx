@@ -1,5 +1,5 @@
 import "./App.css"
-import { useState } from "react"
+
 import Navbar from "./Navbar"
 import { Route, Routes } from "react-router-dom"
 import Notfound from "./Notfound"
@@ -10,36 +10,37 @@ import Profile from "./Profile"
 import Http from "./Http"
 import Onetodo from "./Onetodo"
 import Spotify from "./Spotify"
+import Formik from "./Formik"
 
 function App() {
-  const [username, setusername] = useState("tola")
-   const [detail, setdetail] = useState({
-    user:"david",
-    pass:""
-   })
-   const [input1, setinput1] = useState("")
-   const [input2, setinput2] = useState("")
-   const [alluser, setalluser] = useState([])
-   const [showing, setshowing] = useState(false)
+  // const [username, setusername] = useState("tola")
+  //  const [detail, setdetail] = useState({
+  //   user:"david",
+  //   pass:""
+  //  })
+  //  const [input1, setinput1] = useState("")
+  //  const [input2, setinput2] = useState("")
+  //  const [alluser, setalluser] = useState([])
+  //  const [showing, setshowing] = useState(false)
 
-  const click = () =>{
+  // const click = () =>{
 
-    setusername("bolu")
-    setdetail({...detail, pass:"123"})
-  }
-  const submit = () =>{
-    let userdetail = {
-      input1,
-      input2
-    }
-    console.log(userdetail);
-    setalluser([...alluser,userdetail ])
+  //   setusername("bolu")
+  //   setdetail({...detail, pass:"123"})
+  // }
+  // const submit = () =>{
+  //   let userdetail = {
+  //     input1,
+  //     input2
+  //   }
+  //   console.log(userdetail);
+  //   setalluser([...alluser,userdetail ])
     
-  }
+  // }
 
-  const show = ()=>{
-    setshowing(!showing)
-  }
+  // const show = ()=>{
+  //   setshowing(!showing)
+  // }
   return (
     <>
       {/* <Navbar/> */}
@@ -49,6 +50,7 @@ function App() {
       <Route path="/http" element={<Http/>}/>
       <Route path="/spot" element={<Spotify/>}/>
       <Route path="/one/:id" element={<Onetodo/>}/>
+      <Route path="/formik" element={<Formik/>}/>
       <Route path="/home" element={<Landing/>}>
         <Route index element={<Todo/>} />
         <Route  path='/home/todo' element={<Todo/>}/>
